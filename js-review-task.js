@@ -77,3 +77,38 @@ function addValues(array, target) {
 }
 
 addValues([1, 3, 6, 8, 11, 15], 9)
+
+// Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
+
+function calculator(num1, num2, operator) {
+    if (operator == '+') {
+        return num1 + num2;
+    }
+    if (operator == '-') {
+        return num1 - num2;
+    }
+    if (operator == '*') {
+        return num1 * num2;
+    }
+    if (operator == '/') {
+        return num1 / num2;
+    }
+}
+
+calculator(33, 3, '/')
+
+
+// Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+
+// function getRandom(input) {
+//     const uppercaseChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//     const lowercaseChar = 'abcdefghijklmnopqrstuvwxyz';
+//     const number = '1234567890';
+//     const specialChar = '!@#$%^&*';
+
+//     const random = Math.floor(Math.random() * input);
+//     console.log(random);
+// }
+// getRandom()
+
+
