@@ -99,17 +99,37 @@ calculator(33, 3, '/')
 
 
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+function randomChar(string) {
+    const random = Math.floor(Math.random() * string.length);
+    return string.charAt(random);
+}
 
-// function getRandom(input) {
-//     const uppercaseChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-//     const lowercaseChar = 'abcdefghijklmnopqrstuvwxyz';
-//     const number = '1234567890';
-//     const specialChar = '!@#$%^&*';
+function getRandomPassword(input) {
+    const uppercaseChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lowercaseChar = 'abcdefghijklmnopqrstuvwxyz';
+    const number = '1234567890';
+    const specialChar = '!@#$%^&*';
+    const allChar = uppercaseChar + lowercaseChar + number + specialChar;
 
-//     const random = Math.floor(Math.random() * input);
-//     console.log(random);
-// }
-// getRandom()
+    let password = ''
+
+    password += randomChar(uppercaseChar)
+    password += randomChar(lowercaseChar)
+    password += randomChar(number)
+    password += randomChar(specialChar)
+
+    const remaining = input - password.length;
+    console.log(remaining);
+
+
+    for (let i = 0; i < remaining; i++) {
+        password += randomChar(allChar);
+    }
+    console.log(password);
+    return password;
+
+}
+getRandomPassword(8)
 
 // Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
 
@@ -142,7 +162,7 @@ function getInt(romanNum) {
     }
     return result
 }
-console.log(getInt('vx'))
+getInt('xxi')
 
 
 // Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
