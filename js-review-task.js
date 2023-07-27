@@ -111,4 +111,51 @@ calculator(33, 3, '/')
 // }
 // getRandom()
 
+// Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
 
+// function getInt(romanNum) {
+//     const symbols = {
+//         'I': 1,
+//         'V': 5,
+//         'X': 10,
+//         'L': 50,
+//         'C': 100,
+//         'D': 500,
+//         'M': 1000
+//     }
+//     let result = 0;
+//     const romanUppercase = romanNum.toUpperCase()
+//     for (let i = 0; i < romanNum.length; i++) {
+
+//         const first = symbols[romanUppercase[i]]
+//         const second = symbols[romanUppercase[i + 1]];
+//         if (first < second) {
+//             result = second - first
+//             return result
+//         }
+//         else {
+//             result = second + first;
+//             return result
+//         }
+//         // console.log(romanUppercase, first, second, result);
+//     }
+// }
+// console.log(getInt('xcd'))
+
+
+// Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
+
+function secondSmallest(array) {
+    let smallest = Math.min(...array);
+    let newArray = []
+    let secondSmall;
+    for (let i = 0; i < array.length; i++) {
+        if (smallest !== array[i]) {
+            newArray.push(array[i])
+            secondSmall = Math.min(...newArray);
+        }
+    }
+
+    return secondSmall
+}
+secondSmallest([3, 5, 2, 5, 3, 3, 1, 4, 5]);
